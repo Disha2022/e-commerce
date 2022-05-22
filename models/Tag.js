@@ -7,7 +7,6 @@ class Tag extends Model {}
 Tag.init(
   {
     id: {
-      // id=========================
       // use the special Sequelize DataTypes object provide what type of data it is
       type: DataTypes.INTEGER,
       // this is the equivalent of SQL's `not null` option
@@ -18,7 +17,6 @@ Tag.init(
       autoIncrement: true
 
     },
-    // tagName=====================
     tag_name: {
       type: DataTypes.STRING
       // allowNull:false

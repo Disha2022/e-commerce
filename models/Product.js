@@ -39,8 +39,11 @@ Product.init(
 
     },
     category_id: {
-      type: INTEGER
-      // reference catagory id
+      type: INTEGER,
+      references: {
+        model: 'category',
+        key: 'id'
+      }
     }
   },
   {

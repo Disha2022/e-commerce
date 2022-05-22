@@ -8,7 +8,6 @@ ProductTag.init(
   {
 
     id: {
-      // id=========================
       // use the special Sequelize DataTypes object provide what type of data it is
       type: DataTypes.INTEGER,
       // this is the equivalent of SQL's `not null` option
@@ -19,14 +18,21 @@ ProductTag.init(
       autoIncrement: true
 
     },
-    // Product id Name=====================
     product_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'product',
+        key: 'id'
+      }
       // reference product model id
 
     },
     tag_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'tag',
+        key: 'id'
+      }
       // reference tag model id
 
     }
