@@ -6,7 +6,7 @@ const { Category, Product } = require('../../models');
 router.get('/', (req, res) => {
   // find all categories
   Category.findAll()
-    .then(dbUserData => res.json(dbUserData))
+    .then(categories => res.json(categories))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -20,13 +20,12 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     }
-
-      .then(dbUserData => {
-        if (!dbUserData) {
+      .then(data => {
+        if (!data) {
           res.status(404).json({ message: 'No Category found with this id' });
           return;
         }
-        res.json(dbUserData);
+        res.json(data);
       })
 
       .catch(err => {
@@ -41,7 +40,7 @@ router.get('/:id', (req, res) => {
     Category.create({
       category_name: req.body.category_name
     })
-      .then(dbUserData => res.json(dbUserData))
+      .then(data => res.json(data))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -50,6 +49,9 @@ router.get('/:id', (req, res) => {
 
   router.put('/:id', (req, res) => {
   // update a category by its `id` value
+    Category.update({
+      category_name: req.body.category_name
+    });
   });
 
   router.delete('/:id', (req, res) => {
