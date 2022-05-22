@@ -10,44 +10,44 @@ class Product extends Model {}
 Product.init(
   {
     // define columns
-    id:{
-        // id=========================
+    id: {
+      // id=========================
     // use the special Sequelize DataTypes object provide what type of data it is
-    type: DataTypes.INTEGER,
-    //this is the equivalent of SQL's `not null` option
-    allowNull: false,
-    //instruct that this is the Primary Key
-    primaryKey: true,
-    //turn on auto increment
-    autoIncrement: true,
+      type: DataTypes.INTEGER,
+      // this is the equivalent of SQL's `not null` option
+      allowNull: false,
+      // instruct that this is the Primary Key
+      primaryKey: true,
+      // turn on auto increment
+      autoIncrement: true
     },
-    product_name:{
-type:DataTypes.STRING,
-allowNull:false
+    product_name: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-   price:{
-     type:DataTypes.DECIMAL,
-     allowNull:false,
-     //validate that value is a decimal============
-   },
-   stock:{
-     type:DataTypes.INTEGER,
-     allowNull:false,
-     defaultValue:10,
-     //validate value is numeric
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false
+      // validate that value is a decimal============
+    },
+    stock: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 10
+      // validate value is numeric
 
-   },
-   catagory_id:{
-     type:INTEGER,
-     //reference catagory id
-   }
+    },
+    catagory_id: {
+      type: INTEGER
+      // reference catagory id
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product',
+    modelName: 'product'
   }
 );
 
