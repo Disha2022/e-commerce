@@ -26,9 +26,10 @@ Product.init(
       allowNull: false
     },
     price: {
-      type: DataTypes.DECIMAL,
-      allowNull: false
       // validate that value is a decimal============
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false
+
     },
     stock: {
       type: DataTypes.INTEGER,
@@ -37,7 +38,7 @@ Product.init(
       // validate value is numeric
 
     },
-    catagory_id: {
+    category_id: {
       type: INTEGER
       // reference catagory id
     }

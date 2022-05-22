@@ -18,11 +18,10 @@ Category.init(
       autoIncrement: true
 
     },
-    // Catagory Name=====================
-    catagory_name: {
+    // Category Name=====================
+    category_name: {
       type: DataTypes.STRING,
       allowNull: false
-
     }
 
   },
