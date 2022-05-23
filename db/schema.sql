@@ -1,6 +1,2 @@
--- DROP DATABASE
-DROP DATABASE IF EXISTS just_tech_news_db;
-
--- CREATE DATABASE
-CREATE DATABASE just_tech_news_db;
-
+DROP DATABASE IF EXISTS e_commerce_db;
+CREATE DATABASE e_commerce_db;

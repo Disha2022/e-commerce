@@ -21,8 +21,15 @@
 ## Installation
 
 npm install
+
+create .env file with
+DB_NAME=e_commerce_db
+DB_USER=root
+DB_PW=
+
 mysql -u root -p
-npm run seed
+
+source db/schema.sql
 
 ## Usage
 
